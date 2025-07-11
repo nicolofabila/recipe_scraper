@@ -1,4 +1,6 @@
 scrapy
 beautifulsoup4
 fake-useragent
-requests 
+requests
+pytest
+pytest-cov 
