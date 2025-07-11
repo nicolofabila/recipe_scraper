@@ -1,0 +1,4 @@
+scrapy
+beautifulsoup4
+fake-useragent
+requests 
