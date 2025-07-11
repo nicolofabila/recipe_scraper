@@ -44,4 +44,10 @@ venv.bak/
 
 # OS
 .DS_Store
-Thumbs.db 
+Thumbs.db
+
+# Coverage reports
+.coverage
+htmlcov/
+coverage.xml
+.pytest_cache/ 
