@@ -57,10 +57,15 @@ class RecipeSpider(scrapy.Spider):
         import re
         parsed = urlparse(url)
         path = parsed.path
+
+        # Explicitly exclude index/category pages like /recipes/ or /recipe/
+        if path.rstrip('/') in ['/recipes', '/recipe']:
+            return False
         
         # Skip obvious non-recipe pages
         skip_patterns = [
-            '/recipes/', '/recipe/',  # Category pages
+            '/recipes/category/', '/recipes/collection/', '/recipes/tag/',  # Category/collection pages
+            '/recipe/category/', '/recipe/collection/', '/recipe/tag/',
             '/category/', '/categories/',
             '/collection/', '/collections/',
             '/tag/', '/tags/',
